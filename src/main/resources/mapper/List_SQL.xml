@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="List">
+     
+      <select id="selectList" resultType="com.highluck.dto.ListDTO">
+        <![CDATA[
+            SELECT
+                board_id AS boardId,
+                title,
+                count,
+                create_date AS createDate
+            FROM
+                board
+            WHERE
+                del_con = 'N'
+            ORDER BY board_id DESC
+        ]]>
+    </select>
+     
+</mapper>
+
+<!-- 
+- id="selectBoardList" 부분은 이 쿼리의 id는 selectBoardList 라고 정의하였다. 
+- parameterType="hashmap" 부분은 이 쿼리가 실행될때 필요한 변수는 HashMap 형태를 의미한다.
+- resultType="hashmap" 부분은 이 쿼리의 결과값은 HashMap에 담겨서 반환된다는 것을 의미한다. -->
