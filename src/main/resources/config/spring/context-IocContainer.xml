@@ -14,14 +14,20 @@
     <context:component-scan base-package="com.highluck">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
-                         
-    <!-- MultipartResolver 설정 
-    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <property name="maxUploadSize" value="10000000" />
-        <property name="maxInMemorySize" value="100000000" />
-    </bean>-->
-    <!-- <bean id = "JsonReturn" class="com.highluck.common.JsonSerializeReturn" /> 
-   -->
-   
-   
+    
+    
+    <!-- Ioc 컨테이너 -->
+    <bean id="ioc" class="com.highluck.common.IocContainer">
+    	<property name="listBiz" ref ="listBiz"></property>    
+    </bean>
+    
+    
+    <!-- ServiceBiz -->
+    <bean id="listBiz" class="com.highluck.biz.ListBiz">
+    	<property name="listDao" ref ="listDAO"></property>
+    </bean>
+
+    <!--DAO-->    
+    <bean id="listDAO" class="com.highluck.dao.ListDAO"></bean>  
+                     
 </beans>

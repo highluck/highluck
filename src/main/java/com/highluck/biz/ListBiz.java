@@ -2,6 +2,8 @@ package com.highluck.biz;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,15 +13,16 @@ import com.highluck.dto.ListDTO;
 
 public class ListBiz {
 	
-	private static ListDAO listDao;
+	private ListDAO listDao;
+	public int x;
+	
 	
 	public void setListDao(ListDAO listDao){
-		this.listDao = listDao;
-		System.out.println("bean :" + listDao.hashCode());
-	}
+		this.listDao = listDao;		
+	}	
 	
 	public ArrayList<ListDTO> SelectList() throws Exception{	
-		
+		System.out.println(x);
 		return (ArrayList<ListDTO>) listDao.selectMainList();
 	}
 }

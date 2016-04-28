@@ -3,7 +3,6 @@ package com.highluck.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import com.highluck.common.AbstractDAO;
 import com.highluck.dto.ListDTO;
 

@@ -11,8 +11,12 @@ public class AbstractDAO {
 	protected Log log = LogFactory.getLog(AbstractDAO.class);
     
     @Autowired
-    private SqlSessionTemplate sqlSession;
-     
+    private static SqlSessionTemplate sqlSession;
+    
+    public void setSqlSession(SqlSessionTemplate sqlSession){
+    	this.sqlSession = sqlSession;
+    }
+    
     protected void printQueryId(String queryId) {
         if(log.isDebugEnabled()){
             log.debug("\t QueryId  \t:  " + queryId);

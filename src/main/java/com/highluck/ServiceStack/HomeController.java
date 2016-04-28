@@ -1,4 +1,4 @@
-package com.highluck.common;
+package com.highluck.ServiceStack;
 
 import java.text.DateFormat;
 import java.util.Date;

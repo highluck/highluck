@@ -14,6 +14,13 @@
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
             <bean id="loggerInterceptor" class="com.highluck.common.LoggerInterceptor"></bean>
+           </mvc:interceptor>
+    </mvc:interceptors>
+    
+     <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+             <bean id="bindingInterceptor" class="com.highluck.common.BindingAspect"></bean>
         </mvc:interceptor>
     </mvc:interceptors>
      
@@ -21,7 +28,7 @@
      
     <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="0" />
     <bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />    
-     
+      
     <bean
         class="org.springframework.web.servlet.view.UrlBasedViewResolver" p:order="1"
         p:viewClass="org.springframework.web.servlet.view.JstlView"

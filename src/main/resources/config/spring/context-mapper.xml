@@ -13,4 +13,8 @@
     <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
         <constructor-arg index="0" ref="sqlSession"/>
     </bean>  
+    
+    <bean id="abstractDAO" class="com.highluck.common.AbstractDAO">
+        <property name="sqlSession" ref="sqlSessionTemplate" />       
+    </bean>
 </beans>
