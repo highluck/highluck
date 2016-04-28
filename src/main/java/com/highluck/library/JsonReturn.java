@@ -1,4 +1,4 @@
-package com.highluck.ServiceStack;
+package com.highluck.library;
 
 import java.io.IOException;
 

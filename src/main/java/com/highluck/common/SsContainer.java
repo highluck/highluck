@@ -1,8 +1,7 @@
 package com.highluck.common;
 
-import org.springframework.web.servlet.ModelAndView;
 
-import com.highluck.ServiceStack.JsonReturn;
+import com.highluck.library.JsonReturn;
 
 public class SsContainer {
 	

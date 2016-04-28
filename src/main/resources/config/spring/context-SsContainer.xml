@@ -18,11 +18,11 @@
      <!-- ServiceStack 컨테이너 -->
     <bean id="ss" class="com.highluck.common.SsContainer">  	
     	<property name="json" ref = "json"></property>
-    	<property name="modelView" ref = "modelView"></property>
+    	
     </bean>
     
    
     <!--ServiceStack-->
-    <bean id="json" class="com.highluck.ServiceStack.JsonReturn"></bean>
+    <bean id="json" class="com.highluck.library.JsonReturn"></bean>
                      
 </beans>
