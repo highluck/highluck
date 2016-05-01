@@ -4,7 +4,7 @@
 
 <mapper namespace="List">
      
-      <select id="selectList" resultType="com.highluck.dto.ListDTO">
+      <select id="selectList" resultType="com.peoplejob.dto.ListDTO">
         <![CDATA[
             SELECT
                 board_id AS boardId,

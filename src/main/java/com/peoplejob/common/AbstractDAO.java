@@ -1,4 +1,4 @@
-package com.highluck.common;
+package com.peoplejob.common;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class AbstractDAO {
     private static SqlSessionTemplate sqlSession;
     
     public void setSqlSession(SqlSessionTemplate sqlSession){
-    	this.sqlSession = sqlSession;
+    	AbstractDAO.sqlSession = sqlSession;
     }
     
     protected void printQueryId(String queryId) {

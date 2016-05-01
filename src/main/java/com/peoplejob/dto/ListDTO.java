@@ -1,4 +1,4 @@
-package com.highluck.dto;
+package com.peoplejob.dto;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package com.highluck.common;
+package com.peoplejob.common;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

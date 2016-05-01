@@ -8,19 +8,19 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
  
-    <context:component-scan base-package="com.highluck"></context:component-scan>
+    <context:component-scan base-package="com.peoplejob"></context:component-scan>
      
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
-            <bean id="loggerInterceptor" class="com.highluck.common.LoggerInterceptor"></bean>
+            <bean id="loggerInterceptor" class="com.peoplejob.common.LoggerInterceptor"></bean>
            </mvc:interceptor>
     </mvc:interceptors>
     
      <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
-             <bean id="bindingInterceptor" class="com.highluck.common.BindingAspect"></bean>
+             <bean id="bindingInterceptor" class="com.peoplejob.common.BindingAspect"></bean>
         </mvc:interceptor>
     </mvc:interceptors>
      

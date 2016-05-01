@@ -1,6 +1,6 @@
-package com.highluck.common;
+package com.peoplejob.common;
 
-import com.highluck.biz.ListBiz;
+import com.peoplejob.biz.ListBiz;
 
 public class IocContainer {
 	

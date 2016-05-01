@@ -1,4 +1,4 @@
-package com.highluck.controller;
+package com.peoplejob.controller;
 
 import java.util.ArrayList;
 
@@ -12,9 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.highluck.common.IocContainer;
-import com.highluck.common.SsContainer;
-import com.highluck.dto.ListDTO;
+import com.peoplejob.common.IocContainer;
+import com.peoplejob.common.SsContainer;
+import com.peoplejob.dto.ListDTO;
 
 
 @Controller

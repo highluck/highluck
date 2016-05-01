@@ -1,7 +1,7 @@
-package com.highluck.common;
+package com.peoplejob.common;
 
 
-import com.highluck.library.JsonReturn;
+import com.peoplejob.library.JsonReturn;
 
 public class SsContainer {
 	

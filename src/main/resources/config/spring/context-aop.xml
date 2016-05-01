@@ -11,8 +11,8 @@
                             http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
      
     <aop:aspectj-autoproxy/>
-    	<bean id="loggerAspect" class="com.highluck.common.LoggerAspect" />
-    	<bean id="bindingAspect" class="com.highluck.common.BindingAspect" />
+    	<bean id="loggerAspect" class="com.peoplejob.common.LoggerAspect" />
+    	<bean id="bindingAspect" class="com.peoplejob.common.BindingAspect" />
     
     
    <aop:config proxy-target-class="true">

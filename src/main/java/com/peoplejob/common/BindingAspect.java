@@ -1,4 +1,4 @@
-package com.highluck.common;
+package com.peoplejob.common;
 
 import java.lang.annotation.Target;
 import java.lang.reflect.Field;
@@ -6,16 +6,11 @@ import java.lang.reflect.Field;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.aopalliance.intercept.Joinpoint;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.Signature;
-import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 @Aspect
@@ -25,7 +20,7 @@ public class BindingAspect extends HandlerInterceptorAdapter {
 	
 	@Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        this.request = request;
+        BindingAspect.request = request;
         System.out.println(request);
         return super.preHandle(request, response, handler);
     }

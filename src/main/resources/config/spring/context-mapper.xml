@@ -14,7 +14,7 @@
         <constructor-arg index="0" ref="sqlSession"/>
     </bean>  
     
-    <bean id="abstractDAO" class="com.highluck.common.AbstractDAO">
+    <bean id="abstractDAO" class="com.peoplejob.common.AbstractDAO">
         <property name="sqlSession" ref="sqlSessionTemplate" />       
     </bean>
 </beans>
