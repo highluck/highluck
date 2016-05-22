@@ -7,15 +7,15 @@
       <select id="selectList" resultType="com.peoplejob.dto.ListDTO">
         <![CDATA[
             SELECT
-                board_id AS boardId,
+                boardId,
                 title,
                 count,
-                create_date AS createDate
+                createDate
             FROM
                 board
             WHERE
-                del_con = 'N'
-            ORDER BY board_id DESC
+                delCon = 'N'
+            ORDER BY boardId DESC
         ]]>
     </select>
      

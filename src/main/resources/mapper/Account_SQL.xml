@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Account">
+     
+      <select id="login" parameterType="com.peoplejob.dto.account.AccountFilter" resultType="java.lang.String">
+        <![CDATA[         
+SELECT CASE 
+WHEN A.password = '${password}' THEN 'SUCCESS' 
+else 'FAIL' END
+FROM account A
+WHERE A.email = '${email}'
+        ]]>
+    </select>
+     
+    <select id="getAccount" parameterType="com.peoplejob.dto.account.AccountFilter" resultType="com.peoplejob.dto.account.Account">
+        <![CDATA[
+	SELECT 
+	id
+	,email
+	,nickname
+	,company
+FROM account
+where email = '${email}'
+
+      ]]>
+    </select>
+    
+    <insert id="setAccount" parameterType="com.peoplejob.dto.account.Account">
+        INSERT INTO
+        account (email, nickname, password, company, joinDate, emailConfirm, jobConfirm)
+        VALUE ('${email}', '${nickname}','${password}', '${company}', NOW(), 0, 0)     
+     </insert>
+ 
+</mapper>

@@ -17,7 +17,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 public class BindingAspect extends HandlerInterceptorAdapter {
 	protected Log log = LogFactory.getLog(BindingAspect.class);
 	static HttpServletRequest request;
-	
+/*	
 	@Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         BindingAspect.request = request;
@@ -55,6 +55,6 @@ public class BindingAspect extends HandlerInterceptorAdapter {
         	}	  
 		}
 		 request = null;
-	 }
+	 }*/
 }
 

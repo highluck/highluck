@@ -7,7 +7,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-public class JsonReturn {
+public class Json {
+	private static Json json = new Json();
+	private Json(){}
+	public static Json getJson(){
+		return json;
+	}
 	
 	public void ReturnJSON(HttpServletResponse response, Object objReturn){
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();

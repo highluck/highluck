@@ -12,11 +12,10 @@
      
     <aop:aspectj-autoproxy/>
     	<bean id="loggerAspect" class="com.peoplejob.common.LoggerAspect" />
-    	<bean id="bindingAspect" class="com.peoplejob.common.BindingAspect" />
     
     
    <aop:config proxy-target-class="true">
-		<aop:pointcut id="txAdvisePointCut" expression="execution(public * com.highluck.biz..*.*(..))"/>
+		<aop:pointcut id="txAdvisePointCut" expression="execution(public * com.peoplejob.biz..*.*(..))"/>
 		<aop:advisor id="transactionAdvisor" pointcut-ref="txAdvisePointCut" advice-ref="txAdvice"/>
 	</aop:config>
 	

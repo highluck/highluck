@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Auth">
+     
+ 	<select id="overlabEmail" parameterType="com.peoplejob.dto.account.AccountFilter"  resultType="java.lang.Integer">
+        <![CDATA[
+        SELECT COUNT(email)
+FROM account
+WHERE email =  '${email}'
+          ]]>
+ 	</select>
+ 	
+ 	<select id="overlabNickname" parameterType="com.peoplejob.dto.account.AccountFilter"  resultType="java.lang.Integer">
+        <![CDATA[
+        SELECT COUNT(email)
+FROM account
+WHERE email =  '${nickname}'
+          ]]>
+ 	</select>
+</mapper>

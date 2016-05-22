@@ -12,9 +12,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.peoplejob.biz.ListBiz;
 import com.peoplejob.common.IocContainer;
-import com.peoplejob.common.SsContainer;
+
 import com.peoplejob.dto.ListDTO;
+import com.peoplejob.library.Json;
 
 
 @Controller
@@ -23,22 +25,18 @@ public class HighLuckController {
 	Logger log = Logger.getLogger(this.getClass());
 	@Autowired
 	private IocContainer ioc;
-	@Autowired
-	private SsContainer ss;
-	
-			
+
+				
 	    @RequestMapping(value="/goods.do")
 	    public ModelAndView ListPage() throws Exception{
 	    	ModelAndView mv = new ModelAndView("/BoardList");	    	
-	    	ArrayList<ListDTO> list = ioc.getListBiz().SelectList();
+	    	ArrayList<ListDTO> list = new ListBiz().SelectList();
 	    	mv.addObject("list", list);	    	
 	    	return mv;    	
 	    }
 	   	    
 	    @RequestMapping(value="/goodlist.do")
-	    public void ListJson(HttpServletRequest request, HttpServletResponse response) throws Exception{	    		    	
-	    	
-	    	ss.getJson().ReturnJSON(response, ioc.getListBiz().SelectList()); 	    	
-	    }
-	   
+	    public void ListJson(HttpServletRequest request, HttpServletResponse response) throws Exception{	    		    		    		    	
+	    	Json.getJson().ReturnJSON(response, ioc.getListBiz().SelectList()); 	    		    	    
+	    }	   
 }

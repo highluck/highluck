@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="Board">
+     
+      <select id="getBoardList" parameterType="com.peoplejob.dto.board.BoardPagingFilter" resultType="com.peoplejob.dto.board.Board">
+        <![CDATA[
+           SELECT 
+A.boardId,
+A.title,
+A.contents,
+A.createDate,
+B.nickName,
+B.company,
+A.count
+FROM board A
+LEFT OUTER JOIN account B 
+ON A.createId = B.id
+WHERE A.delCon = 'N'
+ORDER BY boardId DESC
+LIMIT ${columnIndex}, ${columnNumber}
+        ]]>
+      </select>
+      
+      <select id="getBoard" parameterType="com.peoplejob.dto.board.BoardFilter" resultType="com.peoplejob.dto.board.Board">
+        <![CDATA[
+           SELECT 
+A.boardId,
+A.title,
+A.contents,
+A.createDate,
+B.nickName,
+B.company,
+A.count
+FROM board A
+LEFT OUTER JOIN account B 
+ON A.createId = B.id
+WHERE A.boardId = ${boardId}
+        ]]>
+      </select>
+      
+      <select id="getPageCount" parameterType="com.peoplejob.dto.board.BoardPagingFilter" resultType="int">
+      SELECT COUNT(boardId)/${columnNumber}
+FROM board
+      </select>
+  		    
+      <insert id="setBoard" parameterType="com.peoplejob.dto.board.Board">
+        INSERT INTO
+        board (title, contents, createDate, createId, count)
+        VALUE ('${title}', '${contents}', NOW(), ${createId}, 0)     
+     </insert>
+     
+     <delete id="deleteBoard" parameterType="com.peoplejob.dto.board.Board">
+        DELTE board WHERE(boardId=${boardId})
+     </delete>
+ 
+</mapper>
+
