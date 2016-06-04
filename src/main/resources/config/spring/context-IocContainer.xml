@@ -18,7 +18,6 @@
     
     <!-- Ioc 컨테이너 -->
     <bean id="ioc" class="com.highluck.common.IocContainer">
-    	<property name="listBiz" ref ="listBiz"></property>    
     </bean>
     
     

@@ -9,6 +9,11 @@
 	<configs>
 	</configs>
 	<autoconfigs>
+		<config>src/main/resources/config/spring/context-aop.xml</config>
+		<config>src/main/resources/config/spring/context-mapper.xml</config>
+		<config>src/main/resources/config/spring/context-IocContainer.xml</config>
+		<config>src/main/resources/config/spring/context-datasource.xml</config>
+		<config>src/main/resources/config/spring/context-common.xml</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>
