@@ -10,7 +10,7 @@ public class IocContainer {
 	ApplicationContext context;
 	 
 	public IocContainer(){
-		ApplicationContext context = new ClassPathXmlApplicationContext("config/spring/context-IocContainer.xml");
+		context = new ClassPathXmlApplicationContext("config/spring/context-IocContainer.xml");
 	}
 	
 	public ListBiz getListBiz() {
